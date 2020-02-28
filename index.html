@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-   <!-- Theme Made By www.w3schools.com - No Copyright -->
-   <title>Bootstrap Theme Simply Me</title>
+   <title> Me</title>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -85,85 +84,146 @@
          </div>
          <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-               <li><a href="#">WHO</a></li>
-               <li><a href="#">WHO</a></li>
-               <li><a href="#">WHO</a></li>
-               <li><a href="#">WHAT</a></li>
-               <li><a href="#">WHERE</a></li>
+               <li><a href="#FORMATION">FORMATION</a></li>
+               <li><a href="#SKILLS">SKILLS</a></li>
+               <li><a href="#WORK_EXPERIENCE">WORK_EXPERIENCE</a></li>
+               <li><a href="#LANGUAGES">LANGUAGES</a></li>
+               <li><a href="#WHERE">WHERE</a></li>
             </ul>
          </div>
       </div>
    </nav>
 
    <!-- First Container -->
-   <div class="container-fluid bg-1 text-center">
-      <h3 class="margin">Who Am I?</h3>
-      <img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350"
-         height="350">
-      <h3>I'm an adventurer</h3>
+   <div id="FORMATION" class="container-fluid bg-1 text-center">
+      <h2>FORMATION :</h2>
+      - 1.986 : DEGREE ELECTRIC ENGINEERING <BR>
+      - 2.006 : MASTER CONTROL AND POWER ELECTRONIC ENGINEERING <BR>
    </div>
 
    <!-- Second Container -->
-   <div class="container-fluid bg-2 text-center">
-      <h3 class="margin">What Am I?</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-         consequat. </p>
-      <a href="#" class="btn btn-default btn-lg">
-         <span class="glyphicon glyphicon-search"></span> Search
-      </a>
+   <div id="SKILLS" class="container-fluid bg-2 text-center">
+
+      <h2>SKILLS</h2>
+      - Control Simulations (PID, SS) with Matlab/Octave,Scilab & Python<BR>
+      - Back End.- Lambdas, Dynamdb & IoT AWS Cloud Computing <BR>
+      - Frontend.- React<BR>
+      - MCUs.(STM, ESP)- Amazon FreeRTOS, GUIs (embebed C++ & HTML-js)
    </div>
 
    <!-- Third Container (Grid) -->
-   <div class="container-fluid bg-3 text-center">
-      <h3 class="margin">FORMATION</h3><br>
-      <div class="row">
-         <div class="col-sm-4">
-            - 1.986 : ELECTRIC ENGINEERING <BR>
- 
-            <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-         </div>
-         <div class="col-sm-4">
-            - 2.006 : CONTROL AND POWER ELECTRONIC ENGINEERING <BR>
-            <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-         </div>
-         <div class="col-sm-4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-               dolore magna aliqua.</p>
-            <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-         </div>
-      </div>
+   <div id="WORK_EXPERIENCE" class="container-fluid bg-3 text-center">
+      <h2> WORK_EXPERIENCE :</h2>
+      - 2.013 : -  IoT Control Systems Developer <BR>
+      - 2.011 : 2.013  Power Plants Efficiency and Control Instructor<BR>
+      - 1.988 : 2.011  Power Plants & Grid, Operation & Maintenance Manager<BR>
+      - 1.986 : 1.988  PLC SCADA Control Systems Developer.<BR>
    </div>
+
+
+
+   <div id="LANGUAGES" class="container-fluid bg-4 text-center">
+      <h2>LANGUAGES:</h2>
+      - Espanol : Leido, hablado y escrito (mother lang.).<BR>
+      - English : Read, spoken and written<BR>
+      - Ialiano : Letto, parlato e scritto <BR>
+      - Francese: Lu et mal parlé
+   </div>
+
+
+
+
+
+   <form id="CONTACT" class="container-fluid bg-2 text-center" method="POST">
+      <h2>CONTACT</h2>
+
+
+      <div class="row">
+
+         <div class="column"></div>
+         <label for="email">Nombre</label>
+         <input type="name" class="form-control" id="nombre" placeholder="Nombre">
+
+         <label for="email">Email</label>
+         <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+
+
+
+
+
+
+
+
+         <label for="name">Comentario o consulta</label>
+         <input type="name" class="form-control" id="message2" placeholder="cometario" required>
+
+
+         <h4 id="response"></h4>
+
+         <input type="submit" class="btn btn-primary" value="Enviar">
+
+
+
+      </div>
+
+   </form>
+
+
 
    <!-- Footer -->
    <footer class="container-fluid bg-4 text-center">
-      <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+      <p>MSc. FRG <a href="https://www.w3schools.com"></a></p>
    </footer>
 
+
+
+   <script>
+      (() => {
+         // aceptacion pollitica privacidad
+         $('form input[type="submit"]').prop("disabled", false);
+         $(".agree").click(function () {
+            if ($(this).prop("checked") == true) {
+               $('form input[type="submit"]').prop("disabled", false);
+            }
+            else if ($(this).prop("checked") == false) {
+               $('form input[type="submit"]').prop("disabled", false);
+            }
+         });
+
+
+         // envio formulario
+         const form = document.querySelector('form');
+         const submitResponse = document.querySelector('#response');
+         // const formURL = 'https://aatm33sywk.execute-api.eu-west-1.amazonaws.com/Prod/submitForm';
+         const formURL = 'https://bjb4qsjodc.execute-api.eu-west-1.amazonaws.com/Prod/submitForm';
+         form.onsubmit = e => {
+            e.preventDefault();
+
+            // Capture the form data
+            let data = { "web": "wattbucket" };
+            Array.from(form).map(input => (data[input.id] = input.value));
+            submitResponse.innerHTML = 'Enviando...'
+
+            // Create the AJAX request
+            var xhr = new XMLHttpRequest();
+            xhr.open(form.method, formURL, true);
+            xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+            // Send the collected data as JSON
+            xhr.send(JSON.stringify(data));
+
+            xhr.onloadend = response => {
+               if (response.target.status === 200) {
+                  form.reset();
+                  submitResponse.innerHTML = 'Thanks, I`ll contact you as soon as posible !';
+               } else {
+                  submitResponse.innerHTML = 'Error! Por favor intentelo mas tarde.';
+               }
+            };
+         };
+      })();
+   </script>
 </body>
 
 </html>
-
-
-<h2> WORK EXPERIENCE :</h2>
-- 1.986 : 1.988 Landis&Gyr PLC Aplications Developer.<BR>
-- 1.988 : 2.011 EDE Power Plants & Grid, Operation & Maintenance, Manager<BR>
-- 2.011 : 2.013 ENEL University  Power Plants Efficiency and Control Instructor;r<BR>
-- 2.013 : 2.014 Freelance Control Systems Developer <BR>
-
-
-<h2>PC skills</h2>
-- Strong capability in control simulations with , Matlab/Octave,Scilab; light with Modelica & Python<BR>
-- Strong in Office windows/linux
-- Light in VBA, Frontend(js,html,json) and backend(LAMP-Python,node-js,mySQL) ,CMSs, APIs, GNS, Hadoop ...<BR>
-
-
-<h2>Languages:</h2>
-
-- Espanol : Leido, hablado y escrito (mother lang.).<BR>
-- English : Read, spoken and written<BR>
-- Ialiano : Letto e parlato <BR>
-- Francese: Lu
-
-
-</font>
